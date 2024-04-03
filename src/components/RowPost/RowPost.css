@@ -1,0 +1,28 @@
+.row{
+    margin-left: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 0em;
+}
+
+.posters{
+    display: flex;
+    padding-bottom: 1.5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.posters::-webkit-scrollbar{
+    display: none;
+}
+
+.poster{
+    max-height: 10rem;
+    margin-right: .2rem;
+    cursor: pointer;
+}
+
+.poster:hover{
+    scale: 130%;
+}

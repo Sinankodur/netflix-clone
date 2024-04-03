@@ -1,0 +1,61 @@
+.banner{
+    background-image: url('./images/banner.jpg');
+    background-size: cover;
+    top: 0;
+    height: 35rem;
+    color: white;
+}
+
+.content{
+    padding-top: 8rem;
+    height: 10rem;
+    margin-left: 1.5rem;
+}
+
+.title{
+    font-size: 6rem;
+    padding-bottom: 0.5rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.btn{
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    font-size: .9rem;
+    border-radius: .3rem;
+    padding: 0.6rem 1.8rem;
+    background-color: rgba(51, 51, 51, .5);
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn:hover{
+    color: black;
+    background: #e6e6e6;
+}
+
+.description-one{
+    line-height: .1;
+    font-weight: 500;
+    padding-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.description{
+    width: 45rem;
+    line-height: 1.3;
+    font-size: 1.3rem;
+    font-weight: 300;
+    height: 4rem;
+    max-width: 34rem;
+}
+
+.fade-bottom{
+    height: 17rem;
+    background-image: linear-gradient(180deg, transparent, rgba(37,37,37,.61),#111);
+}
