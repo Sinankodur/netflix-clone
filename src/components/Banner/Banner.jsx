@@ -1,22 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { API_KEY, imageUrl } from "../../constants/constants";
 import "./Banner.css";
+import axios from "../../axios";
 
 function Banner() {
+  const [movie, setMovie] = useState([]);
+  useEffect(() => {
+    axios.get(`discover/movie?api_key=${API_KEY}&language=en-US`).then((response) => {
+        // console.log(response.data.results[0]);
+        setMovie(response.data.results[1]);
+      });
+  }, []);
   return (
-    <div className="banner">
+    <div className="banner" style={{backgroundImage: `url(${imageUrl+movie.backdrop_path})`}}>
       <div className="content">
-        <span className="title">Money</span> <br />
-        <span className="title" style={{ lineHeight: "2rem" }}>
-          Heist
-        </span>
-        <div className="banner-btns">
-          <button className="btn"><i className="fa-solid fa-play" style={{paddingRight:".5rem"}}></i> Play</button>
-          <button className="btn"><i className="fa-solid fa-plus" style={{paddingRight:".5rem"}}></i> My List</button>
+        <div style={{maxWidth:'35rem',lineHeight:'3.3rem'}}>
+          <span className="title" >{movie.title}</span>
         </div>
-        <p className="description-one">Watch Part 3 Now</p>
+        <div className="banner-btns">
+          <button className="btn">
+            <i
+              className="fa-solid fa-play"
+              style={{ paddingRight: ".5rem" }}
+            ></i>
+            Play
+          </button>
+          <button className="btn">
+            <i
+              className="fa-solid fa-plus"
+              style={{ paddingRight: ".5rem" }}
+            ></i>
+            My List
+          </button>
+        </div>
         <p className="description">
-          With millions of euros and their lives on the line, nine robbers
-          attempt to pull off the greatest heist of all time.
+          {movie.overview}
         </p>
       </div>
       <div className="fade-bottom"></div>

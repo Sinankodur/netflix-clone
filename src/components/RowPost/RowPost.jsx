@@ -1,31 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from '../../axios'
+import { imageUrl } from '../../constants/constants'
 import './RowPost.css'
-import img1 from './images/3 body problem.jpg'
-import img2 from './images/avatar.jpg'
-import img3 from './images/Call me once.jpg'
-import img4 from './images/homicide.jpg'
-import img5 from './images/monk.jpg'
-import img6 from './images/Stranger_Things__The_Experience.jpg'
-import img7 from './images/the gentlemen.jpg'
-import img8 from './images/the program.jpg'
-import img9 from './images/turning point.jpg'
 
-function RowPost() {
+function RowPost(props) {
+  const [ movies, setMovies ] = useState([])
+  useEffect(()=>{
+    axios.get(props.url).then((response)=>{
+      setMovies(response.data.results)
+      console.log(response.data.results);
+    })
+  }, [])
   return (
     <div>
         <div className='row'>
-           <p>New Releases</p>
+           <p>{props.title}</p>
         </div>
         <div className="posters">
-            <img src={img1} className='poster' alt="poster" />
-            <img src={img2} className='poster' alt="poster" />
-            <img src={img3} className='poster' alt="poster" />
-            <img src={img4} className='poster' alt="poster" />
-            <img src={img5} className='poster' alt="poster" />
-            <img src={img6} className='poster' alt="poster" />
-            <img src={img7} className='poster' alt="poster" />
-            <img src={img8} className='poster' alt="poster" />
-            <img src={img9} className='poster' alt="poster" />
+          {
+            movies.map((obj,index)=>
+            
+              <img src={`${imageUrl+obj.poster_path}`} key={index} alt="poster" className={props.isSmall ? 'poster-small' : 'poster'} />
+            )
+          }
         </div>
     </div>
   )

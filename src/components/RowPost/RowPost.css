@@ -18,11 +18,17 @@
 }
 
 .poster{
-    max-height: 10rem;
+    max-height: 20rem;
     margin-right: .2rem;
     cursor: pointer;
 }
 
-.poster:hover{
-    scale: 130%;
+.poster-small{
+    max-height: 13rem;
+    margin-right: .2rem;
+    cursor: pointer;
+}
+
+.poster:hover, .poster-small:hover{
+    scale: 109%;
 }

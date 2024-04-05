@@ -1,5 +1,4 @@
 .banner{
-    background-image: url('./images/banner.jpg');
     background-size: cover;
     top: 0;
     height: 35rem;
@@ -37,13 +36,6 @@
 .btn:hover{
     color: black;
     background: #e6e6e6;
-}
-
-.description-one{
-    line-height: .1;
-    font-weight: 500;
-    padding-top: 1.5rem;
-    font-size: 1.3rem;
 }
 
 .description{

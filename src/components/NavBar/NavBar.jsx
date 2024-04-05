@@ -14,11 +14,6 @@ function NavBar() {
     }
   }
   window.addEventListener('scroll', changeColor)
-  useEffect(()=>{
-    return(()=>{
-      console.log('color changd');
-    })
-  },[color])
   return (
     <div className={color ? 'navbar navbar-bg' : 'navbar'}>
       <img src={Netflix} className='logo' alt="logo" />
