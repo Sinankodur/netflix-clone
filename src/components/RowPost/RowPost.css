@@ -30,5 +30,5 @@
 }
 
 .poster:hover, .poster-small:hover{
-    scale: 109%;
+    transform: scale(1.1);
 }
